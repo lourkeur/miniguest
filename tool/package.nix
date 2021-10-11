@@ -33,6 +33,7 @@ stdenvNoCC.mkDerivation {
   '';
 
   installPhase = ''
+    install completion.bash -D $out/share/bash-completion/completions/miniguest
     mkdir -p $out/{libexec/miniguest,bin}
       mv *.bash $out/libexec/miniguest
       chmod +x $out/libexec/miniguest/main.bash
